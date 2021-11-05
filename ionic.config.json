@@ -1,0 +1,8 @@
+{
+  "name": "QRC Global",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "3dfd281b"
+}

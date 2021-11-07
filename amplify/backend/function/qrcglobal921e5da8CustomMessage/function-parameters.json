@@ -1,0 +1,26 @@
+{
+  "trigger": true,
+  "modules": [
+    "verification-link"
+  ],
+  "parentResource": "qrcglobal921e5da8",
+  "functionName": "qrcglobal921e5da8CustomMessage",
+  "resourceName": "qrcglobal921e5da8CustomMessage",
+  "parentStack": "auth",
+  "triggerEnvs": [
+    {
+      "key": "RESOURCENAME",
+      "value": "resourceName"
+    }
+  ],
+  "triggerDir": "C:\\Users\\rclem\\AppData\\Roaming\\npm\\node_modules\\@aws-amplify\\cli\\node_modules\\amplify-category-auth\\provider-utils\\awscloudformation\\triggers\\CustomMessage",
+  "triggerTemplate": "CustomMessage.json.ejs",
+  "triggerEventPath": "CustomMessage.event.json",
+  "roleName": "qrcglobal921e5da8CustomMessage",
+  "skipEdit": true,
+  "REDIRECTURL": "qrc.global/account-balance",
+  "EMAILSUBJECT": "QRC.Global Account Confirmation",
+  "EMAILMESSAGE": "Welcome to QRC.Global - Mobile Payment Solutions. Please confirm your email address to begin accepting payments",
+  "RESOURCENAME": "resourceName",
+  "enableCors": false
+}

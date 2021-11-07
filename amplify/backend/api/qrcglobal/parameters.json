@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "qrcglobal",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authqrcglobal921e5da8",
+      "Outputs.UserPoolId"
+    ]
+  }
+}

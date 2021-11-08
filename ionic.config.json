@@ -1,7 +1,15 @@
 {
   "name": "QRC Global",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "enterprise": {
+      "keyId": 4712,
+      "productKey": "key_6194d72285454811906db0198d7f7f73",
+      "appId": "82a6b4c7",
+      "registries": [
+        "@ionic-enterprise;https://registry.ionicframework.com/"
+      ]
+    }
   },
   "type": "angular",
   "id": "3dfd281b"

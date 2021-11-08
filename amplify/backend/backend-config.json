@@ -1,110 +1,118 @@
 {
-  "function": {
-    "qrcglobal921e5da8DefineAuthChallenge": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    },
-    "qrcglobal921e5da8CreateAuthChallenge": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    },
-    "qrcglobal921e5da8VerifyAuthChallengeResponse": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    },
-    "qrcglobal921e5da8CustomMessage": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    }
-  },
-  "auth": {
-    "qrcglobal921e5da8": {
-      "service": "Cognito",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": [
-        {
-          "category": "function",
-          "resourceName": "qrcglobal921e5da8DefineAuthChallenge",
-          "triggerProvider": "Cognito",
-          "attributes": [
-            "Arn",
-            "Name"
-          ]
+    "function": {
+        "qrcglobal921e5da8DefineAuthChallenge": {
+            "build": true,
+            "providerPlugin": "awscloudformation",
+            "service": "Lambda"
         },
-        {
-          "category": "function",
-          "resourceName": "qrcglobal921e5da8CreateAuthChallenge",
-          "triggerProvider": "Cognito",
-          "attributes": [
-            "Arn",
-            "Name"
-          ]
+        "qrcglobal921e5da8CreateAuthChallenge": {
+            "build": true,
+            "providerPlugin": "awscloudformation",
+            "service": "Lambda"
         },
-        {
-          "category": "function",
-          "resourceName": "qrcglobal921e5da8VerifyAuthChallengeResponse",
-          "triggerProvider": "Cognito",
-          "attributes": [
-            "Arn",
-            "Name"
-          ]
+        "qrcglobal921e5da8VerifyAuthChallengeResponse": {
+            "build": true,
+            "providerPlugin": "awscloudformation",
+            "service": "Lambda"
         },
-        {
-          "category": "function",
-          "resourceName": "qrcglobal921e5da8CustomMessage",
-          "triggerProvider": "Cognito",
-          "attributes": [
-            "Arn",
-            "Name"
-          ]
+        "qrcglobal921e5da8CustomMessage": {
+            "build": true,
+            "providerPlugin": "awscloudformation",
+            "service": "Lambda"
         }
-      ],
-      "customAuth": true,
-      "frontendAuthConfig": {
-        "loginMechanisms": [
-          "EMAIL"
-        ],
-        "signupAttributes": [
-          "EMAIL",
-          "NAME",
-          "PHONE_NUMBER"
-        ],
-        "passwordProtectionSettings": {
-          "passwordPolicyMinLength": 8,
-          "passwordPolicyCharacters": []
-        },
-        "mfaConfiguration": "OFF",
-        "mfaTypes": [
-          "SMS"
-        ]
-      }
-    }
-  },
-  "api": {
-    "qrcglobal": {
-      "service": "AppSync",
-      "providerPlugin": "awscloudformation",
-      "output": {
-        "authConfig": {
-          "defaultAuthentication": {
-            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
-            "userPoolConfig": {
-              "userPoolId": "authqrcglobal921e5da8"
+    },
+    "auth": {
+        "qrcglobal921e5da8": {
+            "service": "Cognito",
+            "providerPlugin": "awscloudformation",
+            "dependsOn": [
+                {
+                    "category": "function",
+                    "resourceName": "qrcglobal921e5da8DefineAuthChallenge",
+                    "triggerProvider": "Cognito",
+                    "attributes": [
+                        "Arn",
+                        "Name"
+                    ]
+                },
+                {
+                    "category": "function",
+                    "resourceName": "qrcglobal921e5da8CreateAuthChallenge",
+                    "triggerProvider": "Cognito",
+                    "attributes": [
+                        "Arn",
+                        "Name"
+                    ]
+                },
+                {
+                    "category": "function",
+                    "resourceName": "qrcglobal921e5da8VerifyAuthChallengeResponse",
+                    "triggerProvider": "Cognito",
+                    "attributes": [
+                        "Arn",
+                        "Name"
+                    ]
+                },
+                {
+                    "category": "function",
+                    "resourceName": "qrcglobal921e5da8CustomMessage",
+                    "triggerProvider": "Cognito",
+                    "attributes": [
+                        "Arn",
+                        "Name"
+                    ]
+                }
+            ],
+            "customAuth": true,
+            "frontendAuthConfig": {
+                "loginMechanisms": [
+                    "EMAIL"
+                ],
+                "signupAttributes": [
+                    "EMAIL",
+                    "NAME",
+                    "PHONE_NUMBER"
+                ],
+                "passwordProtectionSettings": {
+                    "passwordPolicyMinLength": 8,
+                    "passwordPolicyCharacters": []
+                },
+                "mfaConfiguration": "OFF",
+                "mfaTypes": [
+                    "SMS"
+                ]
             }
-          },
-          "additionalAuthenticationProviders": []
         }
-      }
+    },
+    "api": {
+        "qrcglobal": {
+            "service": "AppSync",
+            "providerPlugin": "awscloudformation",
+            "output": {
+                "authConfig": {
+                    "defaultAuthentication": {
+                        "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+                        "userPoolConfig": {
+                            "userPoolId": "authqrcglobal921e5da8"
+                        }
+                    },
+                    "additionalAuthenticationProviders": []
+                }
+            }
+        }
+    },
+    "storage": {
+        "s3b5f6574b": {
+            "service": "S3",
+            "providerPlugin": "awscloudformation"
+        }
+    },
+    "notifications": {
+        "qrcglobalOBayH": {
+            "service": "Pinpoint",
+            "channels": [
+                "SMS"
+            ]
+        }
     }
-  },
-  "storage": {
-    "s3b5f6574b": {
-      "service": "S3",
-      "providerPlugin": "awscloudformation"
-    }
-  }
 }
